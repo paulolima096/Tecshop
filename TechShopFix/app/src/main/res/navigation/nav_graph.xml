@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.techshop_p1_grupo9.home.homeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home">
+
+        <action
+            android:id="@+id/action_home_to_carrinho"
+            app:destination="@id/carrinhoFragment" />
+
+        <action
+            android:id="@+id/action_home_to_compra"
+            app:destination="@id/compraFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/carrinhoFragment"
+        android:name="com.example.techshop_p1_grupo9.carrinho.CarrinhoFragment"
+        android:label="Carrinho"
+        tools:layout="@layout/fragment_carrinho">
+
+        <action
+            android:id="@+id/action_carrinho_to_compra"
+            app:destination="@id/compraFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/compraFragment"
+        android:name="com.example.techshop_p1_grupo9.compra.CompraFragment"
+        android:label="Compra"
+        tools:layout="@layout/fragment_compra">
+
+        <action
+            android:id="@+id/action_compra_to_pedidoFinalizado"
+            app:destination="@id/pedidoFinalizadoFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/pedidoFinalizadoFragment"
+        android:name="com.example.techshop_p1_grupo9.compra.PedidoFinalizadoFragment"
+        android:label="Pedido Finalizado"
+        tools:layout="@layout/fragment_pedido_finalizado">
+
+        <action
+            android:id="@+id/action_pedidoFinalizado_to_home"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="false"
+            app:destination="@id/homeFragment" />
+    </fragment>
+
+</navigation>
